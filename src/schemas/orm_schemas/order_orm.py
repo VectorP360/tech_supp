@@ -5,10 +5,11 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import ForeignKey
 
 from . import intpk
-from src.schemas.orm_schemas.enums import OrderStatus
+from src.enums import OrderStatus
 from src.database import Base
+from src.schemas.orm_schemas.service_orm import Service
 if TYPE_CHECKING:
-    from src.schemas.orm_schemas.service_orm import Service
+    
     from src.schemas.orm_schemas.master_orm import Master
 
 

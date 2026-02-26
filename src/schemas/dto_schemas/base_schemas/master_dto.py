@@ -1,7 +1,8 @@
+from typing import TYPE_CHECKING
+
 from pydantic import BaseModel
 
-from src.schemas.dto_schemas.order_dto import OrderDTO
-from src.schemas.orm_schemas.enums import MasterStatus
+from src.enums import MasterStatus
 
 class MasterInDTO(BaseModel):
     name: str
@@ -10,6 +11,3 @@ class MasterInDTO(BaseModel):
 
 class MasterDTO(MasterInDTO):
     master_id: int
-
-class MasterRelDTO(MasterDTO):
-    order: list["OrderDTO"]

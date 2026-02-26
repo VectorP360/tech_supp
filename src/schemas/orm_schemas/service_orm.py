@@ -6,19 +6,19 @@ from sqlalchemy import ForeignKey
 from . import intpk
 
 from src.database import Base
-from src.schemas.orm_schemas.enums import ServiceType
-
+from src.enums import ServiceType
+from src.schemas.orm_schemas.service_detail_orm import ServiceDetail
 if TYPE_CHECKING:
     from src.schemas.orm_schemas.order_orm import Order
-    from src.schemas.orm_schemas.service_detail_orm import ServiceDetail
 
 
 class Service(Base):
     __tablename__ = "service"
 
     service_id: Mapped[intpk]
+    name: Mapped[str]
     service_type: Mapped["ServiceType"]
     cost: Mapped[int]
 
-    order: Mapped["Order"] = relationship(back_populates="service")
-    service_detail: Mapped["ServiceDetail"] = relationship(back_populates="service")
+    order: Mapped[list["Order"]] = relationship(back_populates="service")
+    service_detail: Mapped[list["ServiceDetail"]] = relationship(back_populates="service")

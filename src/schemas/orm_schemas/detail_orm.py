@@ -5,10 +5,10 @@ from sqlalchemy import ForeignKey
 
 from . import intpk
 from src.database import Base
-from src.schemas.orm_schemas.service_detail_orm import ServiceDetail
+from src.schemas.orm_schemas.tech_type_orm import TechType
 if TYPE_CHECKING:
-    from src.schemas.orm_schemas.tech_type_orm import TechType
-
+    
+    from src.schemas.orm_schemas.service_detail_orm import ServiceDetail
 
 
 class Detail(Base):
@@ -19,5 +19,5 @@ class Detail(Base):
     name: Mapped[str]
     cost: Mapped[int]
 
-    service_detail: Mapped[ServiceDetail] = relationship(back_populates="detail")
+    service_detail: Mapped[list['ServiceDetail']] = relationship(back_populates="detail")
     tech_type: Mapped['TechType'] = relationship(back_populates="detail")

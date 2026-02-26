@@ -5,10 +5,11 @@ from sqlalchemy import ForeignKey
 
 from . import intpk
 from src.database import Base
-from src.schemas.orm_schemas.service_orm import Service
+from src.schemas.orm_schemas.detail_orm import Detail
 
 if TYPE_CHECKING:
-    from src.schemas.orm_schemas.detail_orm import Detail
+    
+    from src.schemas.orm_schemas.service_orm import Service
 
 
 

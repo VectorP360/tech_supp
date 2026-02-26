@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Mapped, mapped_column
 
 from . import intpk
-from src.schemas.orm_schemas.enums import Properties
+from src.enums import Properties
 from src.database import Base
 
 class Admin(Base):

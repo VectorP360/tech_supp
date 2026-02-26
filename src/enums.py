@@ -18,3 +18,8 @@ class Properties(Enum):
     manager = "manager"
     analyst = "analist"
     tech_spec = "tech_spec"
+
+class Data_search(Enum):
+    creating_error = "Не получилось создать запись!"
+    not_found = "Запись не найдена!"
+    no_free_masters = "Нет свободных мастеров для приёма заказа!"

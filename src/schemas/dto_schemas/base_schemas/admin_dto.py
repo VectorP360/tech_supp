@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from src.schemas.orm_schemas.enums import Properties
+from src.enums import Properties
 
 class AdminInDTO(BaseModel):
     login: str
